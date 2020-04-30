@@ -7,21 +7,20 @@ import './styles.scss';
 
 
 export interface IconProps extends React.Props<HTMLSpanElement> {
-    IconDefinition: IconDefinition,
+    icon: IconDefinition,
     Color?: TextColorEnum
 }
 
 const Icon = React.forwardRef((props: IconProps, ref?: React.Ref<HTMLSpanElement>) => {
 
     const {
-        IconDefinition,
+        icon,
         Color = ''
     } = props;
-
     return (
         <>
             <span className={clsx('icon', Color)}>
-                <FontAwesomeIcon icon={IconDefinition} />
+                <FontAwesomeIcon icon={icon} />
             </span>
         </>
     );

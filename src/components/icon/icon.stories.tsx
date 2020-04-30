@@ -9,7 +9,7 @@ export default { title: 'Icon', component: Icon };
 export const Basic: FC = () => {
     return (
         <CodeBox title={'基本使用'} Desc={'基本使用'}>
-            <Icon IconDefinition={faEdit} Color={TextColorEnum.info}></Icon>
+            <Icon icon={faEdit} Color={TextColorEnum.info}></Icon>
         </CodeBox>
 
     );

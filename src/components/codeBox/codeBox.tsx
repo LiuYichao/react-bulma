@@ -59,15 +59,15 @@ export const CodeBox = (props: CodeBoxProps) => {
                     <CodeBoxTitle>
                         <CodeIcon>
                             <p>{title}</p>
-                            <Icon IconDefinition={faFileAlt}></Icon>
+                            <Icon icon={faFileAlt}></Icon>
                         </CodeIcon>
                     </CodeBoxTitle>
                     <CodeBoxDesc>
                         <p>{Desc}</p>
                     </CodeBoxDesc>
                     <CodeBoxActions>
-                        <Icon IconDefinition={faCode}></Icon>
-                        <Icon IconDefinition={faCopy}></Icon>
+                        <Icon icon={faCode}></Icon>
+                        <Icon icon={faCopy}></Icon>
                     </CodeBoxActions>
                 </Columns>
             </div>
