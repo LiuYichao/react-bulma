@@ -29,7 +29,22 @@ export const Basic: FC = () => {
     return (
         <>
             <CodeBox title={'基本使用'} Desc={'基本使用'}>
-                <Button>Button</Button>
+                <Button onClick={e => { console.log(e) }}>Button</Button>
+            </CodeBox>
+        </>
+    );
+};
+
+export const refForwarding: FC = () => {
+    const refs = React.createRef<HTMLButtonElement>();
+    return (
+        <>
+            <CodeBox title={'基本使用'} Desc={'基本使用'}>
+                <Button onClick={e => {
+                    console.log(refs);
+                    refs.current?.click();
+                }}>click other button</Button>
+                <Button onClick={e => { alert('clicked') }} ref={refs}>this will be clicked</Button>
             </CodeBox>
         </>
     );
@@ -152,8 +167,8 @@ export const WithIcon: FC = () => {
                 <Columns Direction={'column'}>
                     <Column>
                         <Div1>
-                            <Button color={ColorEnum.success} startIcon={<Icon IconDefinition={faCheck} />}>Save</Button>
-                            <Button color={ColorEnum.danger} endIcon={<Icon IconDefinition={faTimes} />}>Delete</Button>
+                            <Button color={ColorEnum.success} startIcon={<Icon icon={faCheck} />}>Save</Button>
+                            <Button color={ColorEnum.danger} endIcon={<Icon icon={faTimes} />}>Delete</Button>
                         </Div1>
                     </Column>
                 </Columns>

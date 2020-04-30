@@ -1,5 +1,4 @@
 import React, { CSSProperties, ReactElement } from 'react';
-import { makeStyles } from '@material-ui/styles';
 import './styles.scss';
 import clsx from 'clsx';
 
@@ -17,6 +16,7 @@ export interface ButtonProps extends React.Props<HTMLButtonElement> {
     remove?: boolean,
     startIcon?: ReactElement,
     endIcon?: ReactElement,
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const Button = React.forwardRef((props: ButtonProps, ref?: React.Ref<HTMLButtonElement>) => {
@@ -35,9 +35,9 @@ const Button = React.forwardRef((props: ButtonProps, ref?: React.Ref<HTMLButtonE
         loading = false,
         remove = false,
         startIcon = null,
-        endIcon = null
+        endIcon = null,
+        onClick = () => { }
     } = props;
-
     const child = startIcon || endIcon ? <span>{children}</span> : children;
     return (
         <>
@@ -55,7 +55,7 @@ const Button = React.forwardRef((props: ButtonProps, ref?: React.Ref<HTMLButtonE
                         [`is-${size}`]: size
                     }
                 )}
-                style={style} disabled={disabled}>
+                style={style} disabled={disabled} onClick={onClick} ref={ref}>
                 {startIcon}
                 {child}
                 {endIcon}
