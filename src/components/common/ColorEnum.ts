@@ -1,4 +1,4 @@
-export enum ColorEnum {
+export enum TextColorEnum {
     white = 'has-text-white',
     black = 'has-text-black',
     light = 'has-text-light',
@@ -18,4 +18,36 @@ export enum ColorEnum {
     greyLighter = 'has-text-grey-lighter',
     whiteTer = 'has-text-white-ter',
     whiteBis = 'has-text-white-bis'
+}
+
+export enum ColorEnum {
+    black = 'is-black',
+    blackBis = 'is-black-bis',
+    blackTer = 'is-black-ter',
+    greyDarker = 'is-grey-dark',
+    greyDark = 'is-grey-dark',
+    grey = 'is-grey',
+    greyLight = 'is-grey-light',
+    greyLighter = 'is-grey-lighter',
+    greyLightest = 'is-grey-lightest',
+    whiteTer = 'is-white-ter',
+    whiteBis = 'is-white-bis',
+    white = 'is-white',
+    orange = 'is-orange',
+    yellow = 'is-yellow',
+    green = 'is-green',
+    turquoise = 'is-turquoise',
+    cyan = 'is-cyan',
+    blue = 'is-blue',
+    purple = 'is-purple',
+    red = 'is-red',
+    text = 'is-text',
+    primary = 'is-primary',
+    info = 'is-info',
+    success = 'is-success',
+    warning = 'is-warning',
+    danger = 'is-danger',
+    light = 'is-light',
+    dark = 'is-dark',
+    link = 'is-link'
 }

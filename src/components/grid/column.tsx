@@ -9,6 +9,7 @@ export interface ColumnProps extends React.Props<HTMLDivElement> {
 
 const useStyles = makeStyles({
     column: props => ({
+        display: 'flex'
     }),
 });
 const Column = React.forwardRef((props: ColumnProps, ref?: React.Ref<HTMLDivElement>) => {
@@ -19,7 +20,7 @@ const Column = React.forwardRef((props: ColumnProps, ref?: React.Ref<HTMLDivElem
         span = 0
     } = props;
 
-    const classes = useStyles();
+    const classes = useStyles(props);
     const columnSpan = span > 0 ? `is-${span}` : false;
 
     return (
