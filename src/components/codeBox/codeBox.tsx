@@ -1,11 +1,8 @@
 import React, { ReactNode } from 'react';
-import { styled, makeStyles } from '@material-ui/styles';
+import { styled } from '@material-ui/styles';
 import { Columns, Column } from '../grid';
-import { ColorEnum } from '../common/ColorEnum';
 import { faFileAlt, faCode, faCopy } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
-import { relative } from 'path';
-
 
 
 
@@ -15,21 +12,15 @@ export interface CodeBoxProps {
     Desc: string
 }
 
-const useStyles = makeStyles({
-    root: {
-        backgroundColor: '#00d1b2',
-        borderRadius: '4px',
-        color: '#ffffff'
-    },
-});
-
 
 export const CodeBox = (props: CodeBoxProps) => {
     const { children, title, Desc } = props;
 
     const CodeBoxDemo = styled(Column)({
         borderBottom: '1px solid #f0f0f0',
-        padding:' 1.5rem .75rem 1.5rem 1.5rem',
+        padding: ' 1.5rem .75rem 1.5rem 1.5rem',
+        display: 'flex',
+        justifyContent: 'center'
     });
 
     const CodeBoxTitle = styled(Column)({
@@ -60,9 +51,9 @@ export const CodeBox = (props: CodeBoxProps) => {
 
     return (
         <>
-            <div>
+            <div className={'box'}>
                 <Columns>
-                    <CodeBoxDemo>{children}</CodeBoxDemo>
+                    <CodeBoxDemo >{children}</CodeBoxDemo>
                 </Columns>
                 <Columns Direction={'column'}>
                     <CodeBoxTitle>
