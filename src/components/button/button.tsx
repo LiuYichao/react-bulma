@@ -3,6 +3,7 @@ import './styles.scss';
 import clsx from 'clsx';
 
 export interface ButtonProps extends React.Props<HTMLButtonElement> {
+    id?: string,
     color?: string,
     className?: string,
     style?: CSSProperties,
@@ -23,6 +24,7 @@ const Button = React.forwardRef((props: ButtonProps, ref?: React.Ref<HTMLButtonE
 
     const {
         children,
+        id,
         className,
         color = '',
         light = false,
@@ -41,7 +43,7 @@ const Button = React.forwardRef((props: ButtonProps, ref?: React.Ref<HTMLButtonE
     const child = startIcon || endIcon ? <span>{children}</span> : children;
     return (
         <>
-            <button className={
+            <button id={id} className={
                 clsx(
                     className, color,
                     {

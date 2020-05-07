@@ -3,6 +3,7 @@ import { styled } from '@material-ui/styles';
 import { Columns, Column } from '../grid';
 import { faFileAlt, faCode, faCopy } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
+import Box from '../box/box';
 
 
 
@@ -19,8 +20,7 @@ export const CodeBox = (props: CodeBoxProps) => {
     const CodeBoxDemo = styled(Column)({
         borderBottom: '1px solid #f0f0f0',
         padding: ' 1.5rem .75rem 1.5rem 1.5rem',
-        display: 'flex',
-        justifyContent: 'center'
+        textAlign: 'center'
     });
 
     const CodeBoxTitle = styled(Column)({
@@ -51,7 +51,7 @@ export const CodeBox = (props: CodeBoxProps) => {
 
     return (
         <>
-            <div className={'box'}>
+            <Box>
                 <Columns>
                     <CodeBoxDemo >{children}</CodeBoxDemo>
                 </Columns>
@@ -70,7 +70,7 @@ export const CodeBox = (props: CodeBoxProps) => {
                         <Icon icon={faCopy}></Icon>
                     </CodeBoxActions>
                 </Columns>
-            </div>
+            </Box>
         </>
     );
 }
